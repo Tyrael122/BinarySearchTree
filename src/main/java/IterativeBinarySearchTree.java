@@ -96,6 +96,10 @@ public class IterativeBinarySearchTree<T extends Comparable<T>> implements Binar
             throw new IllegalStateException("The specified parent node has two children, only one was expected.");
         }
 
+        if (parentNode.getLeftNode() == null && parentNode.getRightNode() == null) {
+            throw new IllegalStateException("The specified parent node has no children, at least one was expected.");
+        }
+
         Node<T> child = null;
         if (parentNode.getLeftNode() != null) {
             child = parentNode.getLeftNode();
